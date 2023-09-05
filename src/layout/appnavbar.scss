@@ -1,0 +1,51 @@
+@import '../scss/variables.scss';
+
+.item--group {
+  .v-list-group__header__prepend-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: var(--color_fondo) !important;
+    border-radius: 10px;
+    min-width: 60px !important;
+    width: 60px !important;
+    min-height: 60px !important;
+    height: 60px !important;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 1px) {
+  .apps {
+    border: 1px solid $primary;
+    padding: 20px 0px 20px 0px;
+    border-radius: 7px !important;
+    background: $white;
+    transition: top 0.3s ease-in;
+  }
+  .input-search {
+    border-radius: 10px !important;
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .apps {
+    position: fixed;
+    z-index: 10;
+    min-width: 300px;
+    right: 0;
+    top: 65px;
+    // border: 1px solid $primary;
+    padding: 20px 0px 20px 0px;
+    border-radius: 7px !important;
+    background: $white;
+    transition: top 0.3s ease-in;
+  }
+  .input-search {
+    border-radius: 10px !important;
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+  }
+}
