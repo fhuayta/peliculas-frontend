@@ -355,11 +355,7 @@ export default {
       }
       this.$store.commit('openModal');
     },
-    /**
-     * @function save
-     * @description Esta funcion esta creada para guardar en la BD
-     * @author dbarra@agetic.gob.bo
-     */
+
     async save() {
       if (this.$refs.form.validate()) {
         // eslint-disable-next-line

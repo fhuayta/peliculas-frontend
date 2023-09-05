@@ -407,21 +407,13 @@ export default {
       this.itemsPerPage = itemsPerPage;
       this.getData();
     },
-    /**
-     * @function handleCleanFilters
-     * @description Limpiar los filtros
-     * @author dbarra@agetic.gob.bo
-     */
+
     handleCleanFilters() {
       this.search = {};
       this.getData();
       this.showFilter = false;
     },
-    /**
-     * @function getData
-     * @description Obtener los registros para el crudTable
-     * @author dbarra@agetic.gob.bo
-     */
+
     async getData(refresh = false) {
       try {
         this.loading = true;

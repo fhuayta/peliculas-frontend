@@ -10,14 +10,6 @@
       }"
     >
       <div class="description d-flex flex-column align-center justify-center">
-        <!-- <div class="main-image mb-1">
-          <v-img
-            v-if="this.$vuetify.theme.dark"
-            src="./img/logoAgeticLight.png"
-            max-width="140"
-          />
-          <v-img v-else src="./img/logoAgeticDark.png" max-width="250" />
-        </div> -->
         <div class="text d-flex flex-column align-center justify-center">
           <v-container
             fluid

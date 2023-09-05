@@ -9,7 +9,7 @@
       ></v-img>
       <v-card-title>{{ pelicula.Title }}</v-card-title>
       <v-card-subtitle>
-        <v-btn color="secondary" small
+        <v-btn color="primary" small
           @click="verDetalles()">
           <v-icon-component icon="info" class="brightnessText--text" color="primary"/>
           <span class="brightnessText--text">Ver más</span>
@@ -34,8 +34,14 @@
           <b>Título: </b> {{ peliculaSeleccionada.Title }}<br/>
           <b>Año: </b> {{ peliculaSeleccionada.Year }}<br/>
           <b>Director: </b> {{ peliculaSeleccionada.Director }}<br/>
-          <b>Actores: </b> {{ peliculaSeleccionada.Actors }}<br/>
-
+          <b>Actores: </b> {{ peliculaSeleccionada.Actors }}<br/><br/>
+          <div v-if="usuarioLogueado">
+            <v-btn color="secondary"
+              @click="aniadirPeliculas()">
+              <v-icon-component icon="add" class="brightnessText--text" color="primary"/>
+              <span class="brightnessText--text">Añadir a mis peliculas</span>
+            </v-btn>
+          </div>
         </v-card-text>
       </v-card>
       <v-card-actions>
@@ -76,15 +82,22 @@ export default {
     return {
       dialogDetalles: false,
       peliculaSeleccionada: {},
+      usuarioLogueado: null,
     };
   },
   destroyed() {
   },
   mounted() {
+    this.$nextTick(async () => {
+      this.usuarioLogueado = this.$storage.getUser();
+    });
   },
   computed: {
   },
   methods: {
+    async aniadirPeliculas() {
+      console.log('--log--AÑADIR PELICULAS');
+    },
     async verDetalles() {
       console.log('--log-- DETALLES DE PELICULA');
       this.dialogDetalles = true;

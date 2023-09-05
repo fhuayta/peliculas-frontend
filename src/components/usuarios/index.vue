@@ -18,13 +18,13 @@
           @submit.prevent="save"
         >
           <v-card elevation="0">
-            <v-checkbox
+            <!-- <v-checkbox
               v-if="!form.id"
               color="ciudadania"
               v-model="usarCiudadaniaCheckBox"
               class="ciudadania--text ml-2"
               :label="`Usar Ciudadanía Digital`"
-            ></v-checkbox>
+            ></v-checkbox> -->
             <v-card
               v-if="usarCiudadaniaCheckBox"
               elevation="0"
@@ -366,11 +366,7 @@ export default {
         },
       });
     },
-    /**
-     * @function save
-     * @description Esta funcion esta creada para guardar en la BD
-     * @author dbarra@agetic.gob.bo
-     */
+
     async save() {
       await this.setTouched(true);
       if (this.$refs.form.validate()) {

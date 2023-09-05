@@ -1,8 +1,8 @@
 {
-  "name": "agetic-vue-base-frontend",
+  "name": "vue-base-frontend",
   "version": "1.0.0",
   "private": true,
-  "author": "dbarra@agetic.gob.bo",
+  "author": "base-frontend",
   "scripts": {
     "build": "vue-cli-service build",
     "test": "vue-cli-service test:unit",

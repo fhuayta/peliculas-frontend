@@ -1,4 +1,4 @@
-# Proyecto Base Backend - Manual de instalación
+# Peliculas - Manual de instalación
 
 ## Requisitos
 
@@ -9,6 +9,23 @@ Para continuar con la instalación del proyecto se necesita contar con las sigui
 
 Se tomó como ejemplo el [repositorio](https://gitlab.agetic.gob.bo/agetic/backend-base-nestjs) para conectarse con Ciudadania Digital y servir datos fake
 
+## Instalación
+
+### Clonación del proyecto e instalación de dependencias
+
+```bash
+# Clonación del proyecto
+git clone https://github.com/fhuayta/peliculas-frontend.git
+
+# Ingresamos dentro de la carpeta del proyecto
+cd peliculas-frontend
+
+# Cambiamos a la rama develop
+git checkout main
+
+# Instalamos dependencias
+npm install
+```
 ## Configuración 
 
 La configuración de las variables de entorno se encuentran en el archivo .env.sample, con la cual se debe renombrar con .env
