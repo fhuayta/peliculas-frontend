@@ -7,7 +7,7 @@
       :order="order"
       :custom="true"
       :filters.sync="filters"
-      title="Parámetros"
+      title="Mis Películas"
     >
       <template slot="buttons">
         <v-tooltip bottom color="primary">
@@ -174,60 +174,17 @@
           cada columna o mas de 1 columna) -->
       <template slot="items" slot-scope="items">
         <tr>
-          <td>{{ items.items.codigo }}</td>
-          <td>{{ items.items.nombre }}</td>
-          <td>{{ items.items.grupo }}</td>
-          <td>{{ items.items.descripcion }}</td>
+          <td>{{ items.items.poster }}</td>
+          <td>{{ items.items.title }}</td>
+          <td>{{ items.items.year }}</td>
+          <td>{{ items.items.director }}</td>
+          <td>{{ items.items.actors }}</td>
           <td>
             <v-btn
               outlined
               :color="items.items.estado === 'ACTIVO' ? 'info' : 'default'"
               >{{ items.items.estado }}
             </v-btn>
-          </td>
-          <td>
-            <v-tooltip bottom color="primary" v-if="btnEditar">
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  v-on="on"
-                  :color="
-                    ['PENDIENTE', 'ACTIVO'].includes(items.items.estado)
-                      ? 'success'
-                      : 'error'
-                  "
-                  @click.prevent="actualizarParametro(items)"
-                  :disabled="items.items.estado === 'PENDIENTE'"
-                >
-                  <v-icon-component
-                    v-if="['PENDIENTE', 'ACTIVO'].includes(items.items.estado)"
-                    icon="toggle_on"
-                  />
-                  <v-icon-component
-                    v-if="['INACTIVO', 'CREADO'].includes(items.items.estado)"
-                    icon="toggle_off"
-                  />
-                </v-btn>
-              </template>
-              <span>{{
-                items.items.estado === 'INACTIVO'
-                  ? 'Activar parámetro'
-                  : 'Inactivar parámetro'
-              }}</span>
-            </v-tooltip>
-            <v-tooltip bottom color="success" v-if="btnEditar">
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  v-on="on"
-                  color="success"
-                  @click.stop="oModal(items)"
-                >
-                  <v-icon-component icon="edit"></v-icon-component>
-                </v-btn>
-              </template>
-              <span>Editar registro</span>
-            </v-tooltip>
           </td>
         </tr>
       </template>
@@ -247,12 +204,12 @@ export default {
   data() {
     return {
       valid: false,
-      url: 'parametros',
+      url: 'pelicula/todos',
       order: ['createdAt', 'DESC'],
       headers: this.getHeaders(),
       form: this.initForm(),
-      btnAgregar: true,
-      btnEditar: true,
+      btnAgregar: false,
+      btnEditar: false,
       roles: [],
       actualizarRegistro: false,
       filters: [],

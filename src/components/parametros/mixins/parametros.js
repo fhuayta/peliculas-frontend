@@ -2,18 +2,12 @@ export default {
   methods: {
     getHeaders() {
       return [
-        { text: 'Código', align: 'center', value: 'codigo' },
-        { text: 'Nombre', align: 'center', value: 'nombre' },
-        { text: 'Grupo', align: 'center', value: 'grupo' },
-        { text: 'Descripción', sortable: false, value: 'descripcion' },
+        { text: 'Poster', align: 'center', value: 'poster' },
+        { text: 'Titulo', align: 'center', value: 'title' },
+        { text: 'Año', align: 'center', value: 'year' },
+        { text: 'Director', sortable: false, value: 'director' },
+        { text: 'Actores', sortable: false, value: 'actors' },
         { text: 'Estado', sortable: false, value: 'estado' },
-        {
-          text: 'Acciones',
-          divider: false,
-          sortable: false,
-          align: 'center',
-          value: 'ACTIONS',
-        },
       ];
     },
     initForm() {
